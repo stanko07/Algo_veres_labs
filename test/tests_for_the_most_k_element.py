@@ -1,5 +1,5 @@
 import unittest
-from Algo_veres_labs.src.the_most_k_element import search_the_largest_k
+from src.the_most_k_element import search_the_largest_k
 
 
 class TestQuickSort(unittest.TestCase):

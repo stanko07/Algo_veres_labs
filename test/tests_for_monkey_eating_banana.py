@@ -1,5 +1,5 @@
 import unittest
-from Algo_veres_labs.src.monkey_eating_banana import minBanaEat
+from src.monkey_eating_banana import minBanaEat
 
 
 class TestForMavpa(unittest.TestCase):

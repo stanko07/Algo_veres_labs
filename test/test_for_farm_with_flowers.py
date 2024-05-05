@@ -1,7 +1,6 @@
 import unittest
 import os
-from farm_with_flowers import max_flow
-
+from src.farm_with_flowers import max_flow
 cur_path = os.path.dirname(__file__)
 
 
@@ -29,7 +28,6 @@ R4,R3,6""")
         )
         print("Max cars:", max_cars)
         self.assertEqual(max_cars, 12)
-
 
     def test_max_cars_delivery2(self):
         with open(cur_path + "/roads.csv", 'w') as file:

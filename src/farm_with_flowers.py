@@ -1,3 +1,7 @@
+VIRTUAL_FINISH = "VirtualS"
+VIRTUAL_START = "VirtualF"
+
+
 def relax_weight(graph, path, cur_flow):
     for edge in path:
         graph[edge[0]][edge[1]] -= cur_flow
@@ -56,13 +60,13 @@ def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         farms = file.readline().strip().split(',')
         shops = file.readline().strip().split(',')
-        adjacency_list["VirtualF"] = {farm: float('inf') for farm in farms}
+        adjacency_list[VIRTUAL_START] = {farm: float('inf') for farm in farms}
         for shop in shops:
             if shop not in adjacency_list:
-                adjacency_list[shop] = {"VirtualS": float('inf')}
+                adjacency_list[shop] = {VIRTUAL_FINISH: float('inf')}
                 for line in file:
                     source, destination, weight = line.strip().split(',')
                     if source not in adjacency_list:
                         adjacency_list[source] = {}
                     adjacency_list[source][destination] = int(weight)
-            return "VirtualF", "VirtualS", adjacency_list
+            return ("%s" % VIRTUAL_START), ("%s" % VIRTUAL_FINISH), adjacency_list

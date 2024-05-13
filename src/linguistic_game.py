@@ -1,6 +1,6 @@
 def read_file():
     """Читає дані з файлу."""
-    with open('../test/resorses/input_linguistic.txt', 'r') as input_file:
+    with open('./test/resorses/input_linguistic.txt', 'r') as input_file:
         lines = input_file.readlines()
         words = [word.strip() for word in lines[1:]]
     return words
@@ -8,7 +8,7 @@ def read_file():
 
 def result_file(result):
     """Записує результат у файл."""
-    with open('../test/resorses/output_linguistic.txt', 'w') as output_file:
+    with open('./test/resorses/output_linguistic.txt', 'w') as output_file:
         output_file.write(str(result))
 
 
@@ -33,5 +33,3 @@ def find_the_longest_chain(words):
     return max(word_chain_lengths.values())
 
 
-words = read_file()
-find_the_longest_chain(words)
